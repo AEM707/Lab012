@@ -1,5 +1,9 @@
+import turtle
+
+
 class Planet:
-    def __init__(self, name, radius, mass, distance, x, y, color):
+    def __init__(self, name: str, radius: float, mass: float, distance: float, x: float, y: float,
+                 vel_x: float, vel_y: float, color):
         self.name = name
         self.radius = radius
         self.mass = mass
@@ -8,7 +12,13 @@ class Planet:
         self.y = y
         self.vel_x = 0.0
         self.vel_y = 0.0
-        self.color = color
+        self.t = turtle.Turtle()
+        self.t.color(color)
+        self.t.shape("circle")
+        self.t.penup()
+        self.t.goto(self.x, self.y)
+        self.t.pendown()
+
 
     def get_mass(self):
         return self.mass
@@ -34,9 +44,17 @@ class Planet:
     def set_y_vel(self, new_y_vel):
         self.vel_y = new_y_vel
 
-    def move_to(self, new_x, new_y):
+    def move_to(self, new_x: float, new_y: float):
         self.x = new_x
         self.y = new_y
+        self.t.goto(self.x, self.y)
 
-    def __str__(self):
-        return f"Planet {self.name}: Pos=({self.x:.2f}, {self.y:.2f}) Vel=({self.vel_x:.2f}, {self.vel_y:.2f})"
+
+    def __str__(self) -> str:
+        return f"Planet {self.name}, mass={self.mass}, x={self.x}, y={self.y})"
+
+    def __eq__(self, other):
+        return self.name == other.name
+
+def main():
+    p1 = Planet
