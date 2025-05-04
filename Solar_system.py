@@ -6,19 +6,19 @@ import math
 class SolarSystem:
     def __init__(self):
         self.the_sun: Sun = None
-        self.planets = list[Planet] = []
+        self.planets: list[Planet] = []
 
 
-    def add_sun(self, the_sun):
+    def add_sun(self, the_sun: Sun):
         self.the_sun = the_sun
 
-    def add_planet(self, new_planet):
+    def add_planet(self, new_planet: Planet):
         if new_planet not in self.planets:
             self.planets.append(new_planet)
         else:
             print("That planet already exists.")
 
-    def show_planets(self, new_planet: Planet ):
+    def show_planets(self):
         for planet in self.planets:
             print(planet)
 
