@@ -1,15 +1,15 @@
 import turtle
 
 class Sun:
-    def __init__(self, name, radius, mass, temp, x, y):
+    def __init__(self, name: str, radius: float, mass: float, temp: float, x: float, y: float):
         self.name = name
         self.radius = radius
         self.mass = mass
         self.temp = temp
-        self.x = 0.0
-        self.y = 0.0
+        self.x = x
+        self.y = y
         self.t = turtle.Turtle()
-        self.t.color("Yellow")
+        self.t.color("yellow")
         self.t.shape("circle")
         self.t.goto(self.x, self.y)
 
@@ -23,4 +23,4 @@ class Sun:
         return self.y
 
     def __str__(self) -> str:
-        return f"Sun {self.name}: Mass={self.mass}, Temp={self.temp}, Pos=({self.x}, {self.y})"
+        return f"Sun {self.name}, Mass={self.mass}, Temp={self.temp}, x = {self.x}, y = {self.y})"

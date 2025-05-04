@@ -1,17 +1,16 @@
 import turtle
 
-
 class Planet:
-    def __init__(self, name: str, radius: float, mass: float, distance: float, x: float, y: float,
-                 vel_x: float, vel_y: float, color):
+    def __init__(self, name: str, radius: float, mass, distance: float,
+                 x: float, y: float, vel_x: float, vel_y: float, color: str):
         self.name = name
         self.radius = radius
         self.mass = mass
         self.distance = distance
         self.x = x
         self.y = y
-        self.vel_x = 0.0
-        self.vel_y = 0.0
+        self.vel_x = vel_x
+        self.vel_y = vel_y
         self.t = turtle.Turtle()
         self.t.color(color)
         self.t.shape("circle")
@@ -56,5 +55,4 @@ class Planet:
     def __eq__(self, other):
         return self.name == other.name
 
-def main():
-    p1 = Planet
+

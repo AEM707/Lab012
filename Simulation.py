@@ -6,12 +6,12 @@ from Sun import Sun
 
 class Simulation:
     def __init__(self, Solar_system, width: int, height: int, num_periods: int):
+        self.Solar_system = Solar_system
         self.solar_system = solar_system
         self.width = width
         self.height = height
         self.num_periods = num_periods
         self.t = turtle.Turtle()
-        self.t.speed(1)
         self.t.hideturtle()
         self.screen = turtle.Screen()
         self.screen.setup(width = self.width, height = self.height)
@@ -30,6 +30,7 @@ class Simulation:
 
 if __name__ == '__main__':
     solar_system = SolarSystem()
+    simulation = Simulation(solar_system, 500, 500, 2000)
 
     the_sun = Sun("SOL", 5000, 1000, 5800, 0 , 0)
     solar_system.add_sun(the_sun)
@@ -38,8 +39,9 @@ if __name__ == '__main__':
     solar_system.add_planet(earth)
 
     mars = Planet("MARS", 40.5, 1000, 62, 10.0, 125.0, 20, 0, "red")
-    solar_system.add_planet(mars)
 
-    simulation = Simulation(solar_system, 500, 500, 2000)
+    solar_system.add_planet(the_sun)
+
+
 
     simulation.run()
