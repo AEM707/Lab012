@@ -1,2 +1,2 @@
 class UniversalGravity:
-    G: float = 6.67430e-11 # Gravitational constant
+    G: float = 6.67430e-5 # Gravitational constant

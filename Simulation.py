@@ -11,7 +11,7 @@ class Simulation:
         self.height = height
         self.num_periods = num_periods
         self.t = turtle.Turtle()
-        self.t.speed(10)
+        self.t.speed(1000000000000000)
         self.t.hideturtle()
         self.screen = turtle.Screen()
         self.screen.setup(width = self.width, height = self.height)
@@ -23,26 +23,29 @@ class Simulation:
         for a_move in range(self.num_periods):
             self.solar_system.move_planets()
             self.solar_system.show_planets()
-        #self.freeze()
+        self.freeze()
 
     def freeze(self):
         self.screen.exitonclick()
 
 if __name__ == '__main__':
-    solar_system = SolarSystem()
-    simulation = Simulation(solar_system, 500, 500, 200000)
+        solar_system = SolarSystem()
+        the_sun = Sun("SOL", 5000, 1000000000, 5800, 0, 0)
+        solar_system.add_sun(the_sun)
 
-    the_sun = Sun("SOL", 5000, 1000000000000000, 5800, 0 , 0)
-    solar_system.add_sun(the_sun)
+        earth = Planet("EARTH", 40.5, 100, 75, 0, 75, 20, 0,  "green")
+        solar_system.add_planet(earth)
 
-    earth = Planet("EARTH", 50, 100, 75, 0, 75, 300,0, "blue")
-    solar_system.add_planet(earth)
-
-    mars = Planet("MARS", 40.5, 2000, 62, 10.0, 125.0, 300, 50, "red")
-
-    solar_system.add_sun(the_sun)
-    solar_system.add_planet(earth)
-    solar_system.add_planet(mars)
+        mars = Planet("MARS", 40.5, 100, 75, 0, 125, 20, 0,  "red")
+        solar_system.add_planet(mars)
 
 
-    simulation.run()
+        simulation = Simulation(solar_system, 500, 500, 200000)
+        simulation.run()
+
+        solar_system.add_sun(the_sun)
+        solar_system.add_planet(earth)
+        solar_system.add_planet(mars)
+
+
+        simulation.run()
