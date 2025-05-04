@@ -1,6 +1,4 @@
 import turtle
-turtle.speed(0)
-turtle.tracer(0)
 from Planet import Planet
 from Solar_system import SolarSystem
 from Sun import Sun
@@ -18,7 +16,7 @@ class Simulation:
         self.screen.setup(width = self.width, height = self.height)
         self.screen.bgcolor("black")
         self.t.clear()
-        self.t.speed(0)
+
 
     def run(self):
         self.solar_system.show_planets()
@@ -50,7 +48,7 @@ if __name__ == '__main__':
         solar_system.add_planet(venus)
         solar_system.add_planet(mercury)
 
-        turtle.update()
+
 
 
 
