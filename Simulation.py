@@ -34,7 +34,7 @@ if __name__ == '__main__':
         earth = Planet("EARTH", 40.5, 100, 75, 0, 85, 30, 0,  "green")
         mars = Planet("MARS", 20, 100, 75, 0, 115, 25, 0,  "red")
         venus = Planet("Venus", 40, 100, 75,0,162, 20,0,"orange" )
-        mercury = Planet("Mecury", 20, 75,75,0,202, 20,0, "purple")
+        mercury = Planet("Mecury", 20, 75,75,0,202, 20,0, "Purple")
 
 
         simulation = Simulation(solar_system, 500, 500, 200000)
